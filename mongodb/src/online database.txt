@@ -1,0 +1,39 @@
+{
+    string : 'mongodb+srv://satyaprakashpatel61:hum86w00OcT4Aa4X@cluster0.usn9zsm.mongodb.net/testdb'
+}
+
+
+
+mongo db atlas 
+admin {
+    username : SatyaPrakashPatel 
+    password : QLNBNJD7vYoZnvp7
+}
+newuser {
+    username : newUser,
+    password : zwJQAh5Hl9s3lcGe
+}
+
+// 
+(async()=>{
+	try {
+		// database connection
+		await mongoose.connect('');
+		console.log("Connected to MongoDB");  
+
+		app.on('error',(err)=>{
+			console.log('error1111111',err);
+			throw err;
+		})
+
+		const onListening = ()=>{
+			console.log(`Server running at http://localhost:${port}`);
+		}
+
+		app.listen(port,onListening);
+		
+		} catch (err) {
+			console.error(`Error connecting to MongoDB: ${err}`);
+			process.exit();
+		};
+})()

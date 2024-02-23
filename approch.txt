@@ -1,0 +1,14 @@
+1. nodejs
+2. npm package
+3. install express mongoose
+4. create basic express server
+5. basic routes (/)
+6. Routes : /login,/signup,/userinfo,....
+7. controllers
+8. schema
+9. databse connection
+10. JWT
+
+
+
+packages : express cookie-parser bcrypt mongoose jsonwebtoken cors email-validator dotenv --save
