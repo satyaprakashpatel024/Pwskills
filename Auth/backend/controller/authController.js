@@ -97,9 +97,10 @@ const signin = async (req, res, next) => {
 }
 const getUser = async (req, res, next) => {
     const userId = req.user.id;
-    console.log(userId);
+    // console.log(userId);
     try {
         const user = await UserModel.findById(userId);
+        // console.log(user,'userformdb');
         return res.status(200).json({
             success: true,
             data: user
