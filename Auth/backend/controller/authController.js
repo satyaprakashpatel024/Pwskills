@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const signup = async (req, res, next) => {
     const { name, email, password, confirmPassword } = req.body;
-
+    // console.log(req.body);
     // user level validation of data
     if (!name || !email || !password || !confirmPassword) {
         return res.status(400).json({
@@ -38,7 +38,8 @@ const signup = async (req, res, next) => {
             success: true,
             data: result
         });
-    } catch (error) {
+    } 
+    catch (error) {
         if (error.code == 11000) { // duplicate key error
             return res.status(400).send({
                 success: false,
@@ -51,10 +52,9 @@ const signup = async (req, res, next) => {
         })
     }
 }
-
 const signin = async (req, res, next) => {
     const { email, password } = req.body;
-
+    // console.log(req.body);
     if (!email || !password) {
         return res.status(400).json({
             success: false,
@@ -95,9 +95,9 @@ const signin = async (req, res, next) => {
         })
     }
 }
-
 const getUser = async (req, res, next) => {
     const userId = req.user.id;
+    console.log(userId);
     try {
         const user = await UserModel.findById(userId);
         return res.status(200).json({

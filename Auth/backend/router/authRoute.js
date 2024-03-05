@@ -9,5 +9,3 @@ authRouter.get('/user', jwtAuth, getUser);
 authRouter.get('/logout',jwtAuth, logout);
 
 module.exports = authRouter;
-
-module.exports = authRouter;
